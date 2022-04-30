@@ -106,8 +106,8 @@ processResources {
 jar.finalizedBy('reobfJar')
 
 def ENV = System.getenv()
-def releasesRepoUrl = "https://nexus.resourcefulbees.com/repository/maven-releases/"
-def snapshotsRepoUrl = "https://nexus.resourcefulbees.com/repository/maven-snapshots/"
+def releasesRepoUrl = "https://maven.resourcefulbees.com/repository/thatgravyboat/"
+def snapshotsRepoUrl = "https://maven.resourcefulbees.com/repository/thatgravyboat/"
 
 publishing {
     publications {
