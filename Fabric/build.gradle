@@ -63,7 +63,7 @@ def snapshotsRepoUrl = "https://maven.resourcefulbees.com/repository/thatgravybo
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            artifact remapJar
             artifact sourcesJar
             //artifact javadocJar
 
