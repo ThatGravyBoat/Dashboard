@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+
+[[mods]]
+    modId="dashboard"
+    version="${file.jarVersion}"
+    displayName="Dashboard"
+    authors="ThatGravyBoat"
+    description="Allows you to switch between world states such as time and weather."
+
+[[dependencies.dashboard]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dashboard]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18,)"
+    ordering="NONE"
+    side="BOTH"

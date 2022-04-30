@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "dashboard",
+  "version": "${version}",
+
+  "name": "Dashboard",
+  "description": "Allows you to switch between world states such as time and weather.",
+  "authors": [
+    "ThatGravyBoat"
+  ],
+  "license": "All Rights Reserved",
+  
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "tech.thatgravyboat.dashboard.FabricDashboardClient"
+    ]
+  },
+  "mixins": [
+    "dashboard.mixins.json"
+  ],
+  
+  "depends": {
+    "fabricloader": ">=0.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
+  
