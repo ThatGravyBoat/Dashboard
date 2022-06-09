@@ -3,7 +3,6 @@ package tech.thatgravyboat.dashboard.client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -36,9 +35,9 @@ public class WeatherSwitcher extends SwitcherScreen<WeatherSwitcher.WeatherType>
     }
 
     public enum WeatherType implements Type<WeatherType> {
-        CLEAR(new TranslatableComponent("debug.weather.clear"), "/weather clear", new ItemStack(Items.SUNFLOWER)),
-        RAIN(new TranslatableComponent("debug.weather.rain"), "/weather rain", new ItemStack(Items.WATER_BUCKET)),
-        THUNDER(new TranslatableComponent("debug.weather.thunder"), "/weather thunder", new ItemStack(Items.TRIDENT));
+        CLEAR(Component.translatable("debug.weather.clear"), "weather clear", new ItemStack(Items.SUNFLOWER)),
+        RAIN(Component.translatable("debug.weather.rain"), "weather rain", new ItemStack(Items.WATER_BUCKET)),
+        THUNDER(Component.translatable("debug.weather.thunder"), "weather thunder", new ItemStack(Items.TRIDENT));
 
         private final Component component;
         private final String command;

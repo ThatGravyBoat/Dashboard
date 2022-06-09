@@ -3,7 +3,6 @@ package tech.thatgravyboat.dashboard.client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -38,10 +37,10 @@ public class TimeSwitcher extends SwitcherScreen<TimeSwitcher.TimeType> {
     }
 
     public enum TimeType implements Type<TimeType> {
-        DAY(new TranslatableComponent("debug.time.day"), "/time set day", new ItemStack(Items.SUNFLOWER)),
-        NOON(new TranslatableComponent("debug.time.noon"), "/time set noon", new ItemStack(Items.REDSTONE_LAMP)),
-        NIGHT(new TranslatableComponent("debug.time.night"), "/time set night", new ItemStack(Items.RED_BED)),
-        MIDNIGHT(new TranslatableComponent("debug.time.midnight"), "/time set midnight", new ItemStack(Items.FIREWORK_STAR));
+        DAY(Component.translatable("debug.time.day"), "time set day", new ItemStack(Items.SUNFLOWER)),
+        NOON(Component.translatable("debug.time.noon"), "time set noon", new ItemStack(Items.REDSTONE_LAMP)),
+        NIGHT(Component.translatable("debug.time.night"), "time set night", new ItemStack(Items.RED_BED)),
+        MIDNIGHT(Component.translatable("debug.time.midnight"), "time set midnight", new ItemStack(Items.FIREWORK_STAR));
 
         private final Component component;
         private final String command;

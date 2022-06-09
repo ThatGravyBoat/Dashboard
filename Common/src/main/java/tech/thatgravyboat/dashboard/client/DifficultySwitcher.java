@@ -3,7 +3,6 @@ package tech.thatgravyboat.dashboard.client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -40,10 +39,10 @@ public class DifficultySwitcher extends SwitcherScreen<DifficultySwitcher.Diffic
     }
 
     public enum DifficultyType implements Type<DifficultyType> {
-        PEACEFUL(new TranslatableComponent("debug.difficulty.peaceful"), "/difficulty peaceful", new ItemStack(Items.LEATHER_CHESTPLATE)),
-        EASY(new TranslatableComponent("debug.difficulty.easy"), "/difficulty easy", new ItemStack(Items.CHAINMAIL_CHESTPLATE)),
-        NORMAL(new TranslatableComponent("debug.difficulty.normal"), "/difficulty normal", new ItemStack(Items.DIAMOND_CHESTPLATE)),
-        HARD(new TranslatableComponent("debug.difficulty.hard"), "/difficulty hard", new ItemStack(Items.NETHERITE_CHESTPLATE));
+        PEACEFUL(Component.translatable("debug.difficulty.peaceful"), "difficulty peaceful", new ItemStack(Items.LEATHER_CHESTPLATE)),
+        EASY(Component.translatable("debug.difficulty.easy"), "difficulty easy", new ItemStack(Items.CHAINMAIL_CHESTPLATE)),
+        NORMAL(Component.translatable("debug.difficulty.normal"), "difficulty normal", new ItemStack(Items.DIAMOND_CHESTPLATE)),
+        HARD(Component.translatable("debug.difficulty.hard"), "difficulty hard", new ItemStack(Items.NETHERITE_CHESTPLATE));
 
         private final Component component;
         private final String command;

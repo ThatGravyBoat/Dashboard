@@ -9,8 +9,7 @@ import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import tech.thatgravyboat.dashboard.constants.Type;
 
@@ -59,7 +58,7 @@ public abstract class SwitcherScreen<T extends Type<T>> extends Screen {
             stack.popPose();
             super.render(stack, mouseX, mouseY, partialTicks);
             drawCenteredString(stack, this.font, this.currentlyHovered.getName(), this.width / 2, this.height / 2 - 31- 20, -1);
-            var selectKey = new TranslatableComponent("debug.gamemodes.select_next", (new TextComponent("[ " + keyName() + " ]")).withStyle(ChatFormatting.AQUA));
+            var selectKey = Component.translatable("debug.gamemodes.select_next", (Component.literal("[ " + keyName() + " ]")).withStyle(ChatFormatting.AQUA));
             drawCenteredString(stack, this.font, selectKey, this.width / 2, this.height / 2 + 5, 16777215);
             if (!this.setFirstMousePos) {
                 this.firstMouseX = mouseX;
@@ -84,7 +83,7 @@ public abstract class SwitcherScreen<T extends Type<T>> extends Screen {
         if (this.minecraft == null || this.minecraft.player == null) return false;
         if (!InputConstants.isKeyDown(this.minecraft.getWindow().getWindow(), 292)) {
             if (this.minecraft.player.hasPermissions(2) && this.currentlyHovered.shouldRun(this.minecraft.level)) {
-                this.minecraft.player.chat(this.currentlyHovered.getCommand());
+                this.minecraft.player.command(this.currentlyHovered.getCommand());
             }
             this.minecraft.setScreen(null);
             return true;
