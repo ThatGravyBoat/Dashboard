@@ -1,0 +1,25 @@
+{
+    "schemaVersion": 1,
+    "id": "dashboard",
+    "version": "${version}",
+    "name": "Dashboard",
+    "description": "",
+    "authors": [
+        "ThatGravyBoat"
+    ],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/dashboard",
+        "issues": "https://github.com/ThatGravyBoat/Dashboard/issues",
+        "sources": "https://github.com/ThatGravyBoat/Dashboard"
+    },
+    "license": "MIT",
+    "environment": "*",
+    "entrypoints": {},
+    "mixins": [
+        "dashboard.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.19",
+        "minecraft": ">=1.19.4"
+    }
+}

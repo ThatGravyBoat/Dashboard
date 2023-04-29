@@ -1,0 +1,26 @@
+modLoader = "lowcodefml"
+loaderVersion = "[45,)"
+license = "MIT"
+issueTrackerURL = "https://brady/Dashboard/issues"
+
+[[mods]]
+    modId = "dashboard"
+    version = "${version}"
+    displayName = "Dashboard"
+    updateJSONURL="https://api.modrinth.com/updates/Q0XHpuQz/forge_updates.json"
+    displayURL="https://modrinth.com/mod/dashboard"
+    authors="ThatGravyBoat"
+    description = "More menus like the gamemode switcher."
+
+[[dependencies.dashboard]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[45,)"
+    ordering = "NONE"
+    side = "CLIENT"
+[[dependencies.dashboard]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.19.4,1.20)"
+    ordering = "NONE"
+    side = "CLIENT"
