@@ -17,5 +17,5 @@
   "debug.difficulty.error": "Не удалось открыть переключатель сложности, недостаточно полномочий",
 
   "modmenu.summaryTranslation.dashboard": "Новые меню быстрых настроек игры.",
-  "modmenu.descriptionTranslation.dashboard": "Dashboard добавляет новые меню переключения элементов игры (наподобие переключателя режима) для погоды, времени и сложности."
+  "modmenu.descriptionTranslation.dashboard": "Dashboard добавляет новые меню переключения элементов игры (наподобие переключателя режима) для погоды, времени суток и сложности."
 }
