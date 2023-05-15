@@ -1,0 +1,21 @@
+{
+  "debug.weather.clear": "Ясная погода",
+  "debug.weather.rain": "Дождливая погода",
+  "debug.weather.thunder": "Грозовая погода",
+  "debug.weather.error": "Не удалось открыть переключатель погоды, недостаточно полномочий",
+
+  "debug.time.day": "Утро",
+  "debug.time.noon": "Полдень",
+  "debug.time.night": "Вечер",
+  "debug.time.midnight": "Полночь",
+  "debug.time.error": "Не удалось открыть переключатель времени, недостаточно полномочий",
+
+  "debug.difficulty.peaceful": "Мирная сложность",
+  "debug.difficulty.easy": "Лёгкая сложность",
+  "debug.difficulty.normal": "Нормальная сложность",
+  "debug.difficulty.hard": "Сложная сложность",
+  "debug.difficulty.error": "Не удалось открыть переключатель сложности, недостаточно полномочий",
+
+  "modmenu.summaryTranslation.dashboard": "Новые меню быстрых настроек игры.",
+  "modmenu.descriptionTranslation.dashboard": "Dashboard добавляет новые меню переключения элементов игры (наподобие переключателя режима) для погоды, времени и сложности."
+}
