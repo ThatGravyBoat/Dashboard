@@ -14,5 +14,8 @@
   "debug.difficulty.easy": "Difficulty: Easy",
   "debug.difficulty.normal": "Difficulty: Normal",
   "debug.difficulty.hard": "Difficulty: Hard",
-  "debug.difficulty.error": "Unable to open difficulty changer; no permission"
+  "debug.difficulty.error": "Unable to open difficulty changer; no permission",
+
+  "modmenu.summaryTranslation.dashboard": "More menus like the gamemode switcher.",
+  "modmenu.descriptionTranslation.dashboard": "Dashboard adds several switchers like the game mode switcher for other things such as Weather, Time, and Difficulty."
 }
