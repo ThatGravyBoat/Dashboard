@@ -14,7 +14,6 @@
     },
     "license": "MIT",
     "environment": "*",
-    "entrypoints": {},
     "mixins": [
         "dashboard.mixins.json"
     ],

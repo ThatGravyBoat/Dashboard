@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import tech.thatgravyboat.dashboard.constants.Constants;
+import tech.thatgravyboat.dashboard.constants.Switchers;
 import tech.thatgravyboat.dashboard.constants.Switch;
 
 @Mixin(KeyboardHandler.class)
@@ -20,7 +20,7 @@ public abstract class KeyboardHandlerMixin {
 
     @Inject(method = "handleDebugKeys", at = @At("HEAD"), cancellable = true)
     public void handleDebugKey(int key, CallbackInfoReturnable<Boolean> cir) {
-        Switch switcher = Constants.SWITCHERS.get(key);
+        Switch switcher = Switchers.get(key);
         if (switcher != null && this.minecraft.player != null) {
             if (!this.minecraft.player.hasPermissions(2)) {
                 this.debugFeedbackTranslated("debug." + switcher.id() + ".error");

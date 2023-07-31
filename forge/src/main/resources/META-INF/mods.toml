@@ -1,7 +1,7 @@
 modLoader = "lowcodefml"
-loaderVersion = "[45,)"
+loaderVersion = "[46,)"
 license = "MIT"
-issueTrackerURL = "https://brady/Dashboard/issues"
+issueTrackerURL = "https://github.com/ThatGravyBoat/Dashboard/issues"
 
 [[mods]]
     modId = "dashboard"
@@ -15,12 +15,13 @@ issueTrackerURL = "https://brady/Dashboard/issues"
 [[dependencies.dashboard]]
     modId = "forge"
     mandatory = true
-    versionRange = "[45,)"
+    versionRange = "[46,)"
     ordering = "NONE"
     side = "CLIENT"
+
 [[dependencies.dashboard]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.19.4,1.20)"
+    versionRange = "[1.20,)"
     ordering = "NONE"
     side = "CLIENT"

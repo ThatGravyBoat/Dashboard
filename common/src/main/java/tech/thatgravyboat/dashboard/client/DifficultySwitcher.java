@@ -1,8 +1,7 @@
 package tech.thatgravyboat.dashboard.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -56,8 +55,8 @@ public class DifficultySwitcher extends SwitcherScreen<DifficultySwitcher.Diffic
         }
 
         @Override
-        public void draw(PoseStack pose, ItemRenderer renderer, int x, int y) {
-            renderer.renderAndDecorateItem(pose, stack, x, y);
+        public void draw(GuiGraphics graphics, int x, int y) {
+            graphics.renderFakeItem(stack, x, y);
         }
 
         @Override

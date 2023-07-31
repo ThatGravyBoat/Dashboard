@@ -2,8 +2,8 @@ package tech.thatgravyboat.dashboard.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.Screen;
@@ -47,20 +47,19 @@ public abstract class SwitcherScreen<T extends Type<T>> extends Screen {
     }
 
     @Override
-    public void render(@NotNull PoseStack stack, int mouseX, int mouseY, float partialTicks) {
+    public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
         if (!this.checkToClose()) {
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            stack.pushPose();
+            graphics.pose().pushPose();
             RenderSystem.enableBlend();
-            RenderSystem.setShaderTexture(0, LOCATION);
             int i = this.width / 2 - 62;
             int j = this.height / 2 - 31 - 27;
-            blit(stack, i, j, 0f, 0f, 125, 75, 128, 128);
-            stack.popPose();
-            super.render(stack, mouseX, mouseY, partialTicks);
-            drawCenteredString(stack, this.font, this.currentlyHovered.getName(), this.width / 2, this.height / 2 - 31- 20, -1);
+            graphics.blit(LOCATION, i, j, 0f, 0f, 125, 75, 128, 128);
+            graphics.pose().popPose();
+            super.render(graphics, mouseX, mouseY, partialTicks);
+            graphics.drawCenteredString(this.font, this.currentlyHovered.getName(), this.width / 2, this.height / 2 - 31- 20, -1);
             var selectKey = Component.translatable("debug.gamemodes.select_next", (Component.literal("[ " + keyName() + " ]")).withStyle(ChatFormatting.AQUA));
-            drawCenteredString(stack, this.font, selectKey, this.width / 2, this.height / 2 + 5, 16777215);
+            graphics.drawCenteredString(this.font, selectKey, this.width / 2, this.height / 2 + 5, 16777215);
             if (!this.setFirstMousePos) {
                 this.firstMouseX = mouseX;
                 this.firstMouseY = mouseY;
@@ -70,14 +69,14 @@ public abstract class SwitcherScreen<T extends Type<T>> extends Screen {
             boolean flag = this.firstMouseX == mouseX && this.firstMouseY == mouseY;
 
             for (TypeSlot slot : this.slots) {
-                slot.render(stack, mouseX, mouseY, partialTicks);
+                slot.render(graphics, mouseX, mouseY, partialTicks);
                 slot.setSelected(this.currentlyHovered == slot.type);
                 if (!flag && slot.isHoveredOrFocused()) {
                     this.currentlyHovered = slot.type;
                 }
             }
         }
-        super.render(stack, mouseX, mouseY, partialTicks);
+        super.render(graphics, mouseX, mouseY, partialTicks);
     }
 
     private boolean checkToClose() {
@@ -119,15 +118,15 @@ public abstract class SwitcherScreen<T extends Type<T>> extends Screen {
         }
 
         @Override
-        public void renderWidget(PoseStack pose, int i, int j, float f) {
+        public void renderWidget(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
             RenderSystem.setShaderTexture(0, LOCATION);
-            pose.pushPose();
-            pose.translate(getX(), getY(), 0.0D);
-            blit(pose, 0, 0, 0.0F, 75.0F, 26, 26, 128, 128);
-            if (this.isSelected) blit(pose, 0, 0, 26.0F, 75.0F, 26, 26, 128, 128);
-            pose.popPose();
-            this.type.draw(pose, SwitcherScreen.this.itemRenderer, getX() + 5, getY() + 5);
+            graphics.pose().pushPose();
+            graphics.pose().translate(getX(), getY(), 0.0D);
+            graphics.blit(LOCATION, 0, 0, 0.0F, 75.0F, 26, 26, 128, 128);
+            if (this.isSelected) graphics.blit(LOCATION, 0, 0, 26.0F, 75.0F, 26, 26, 128, 128);
+            graphics.pose().popPose();
+            this.type.draw(graphics, getX() + 5, getY() + 5);
         }
 
         public void setSelected(boolean selected) {
